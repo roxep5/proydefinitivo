@@ -1,5 +1,13 @@
 <odoo>
     <data>
+            <record model="ir.actions.act_window" id="suceso_list_action">
+      <field name="name">A acción de Suceso </field> <!-- O que se visualiza na parte superior esquerda -->
+      <field name="res_model">proydefinitivo.suceso</field>
+      <field name="view_mode">tree</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">Tes que crear o primeiro rexistro</p>
+      </field>
+    </record>
              <record model="ir.ui.view" id="suceso_tree_view">
             <field name="name">suceso.tree</field>
             <field name="model">proydefinitivo.suceso</field>
@@ -12,5 +20,15 @@
                 </tree>
             </field>
         </record>
+            <record model="ir.ui.view" id="suceso_search_view">
+      <field name="name">suceso.search</field>
+      <field name="model">proydefinitivo.suceso</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="nivel"/>
+        </search>
+      </field>
+    </record>
+
     </data>
 </odoo>

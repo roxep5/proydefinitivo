@@ -22,15 +22,68 @@
           <group>
           <field name="name"/>
              <field name="foto" widget="image" class="oe_avatar"/>
- <field name="foto" widget="image"/>
- <field name="adxunto_nome" invisible="1"/>
- <field name="adxunto" filename="adxunto_nome"/>
+          <field name="descripcion"/>
+          <field name="autorizado"/>
+          <field name="sexo_traducido"/>
+          <field name="alto_en_cms"/>
+          <field name="longo_en_cms"/>
+          <field name="ancho_en_cms"/>
+          <field name="volume"/>
+          <field name="peso"/>
+          <field name="densidade"/>
           </group>
         </sheet>
         </form>
       </field>
     </record>
 
+<record model="ir.ui.view" id="definitivo_form_view">
+      <field name="name">definitivo.form</field>
+      <field name="model">proydefinitivo.definitivo</field>
+      <field name="arch" type="xml">
+        <form string="Formulario Definitivo">
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="foto" widget="image" class="oe_avatar"/>
+              <field name="foto" widget="image"/>
+              <field name="adxunto_nome" invisible="1"/>
+              <field name="adxunto" filename="adxunto_nome"/>
+            </group>
+            <notebook>
+              <page string="Datos Persoais">
+                <group>
+                  <field name="descripcion"/>
+                  <field name="autorizado"/>
+                  <field name="sexo_traducido"/>
+                </group>
+              </page>
+              <page string="Datos Numéricos">
+                <group>
+                  <field name="alto_en_cms"/>
+                  <field name="longo_en_cms"/>
+                  <field name="ancho_en_cms"/>
+                  <field name="volume"/>
+                  <field name="peso"/>
+                  <field name="densidade"/>
+                </group>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+        <record model="ir.ui.view" id="definitivo_search_view">
+      <field name="name">definitivo.search</field>
+      <field name="model">proydefinitivo.definitivo</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="descripcion"/>
+          <field name="sexo_traducido"/>
+        </search>
+      </field>
+    </record>
 
         <record model="ir.filters" id="filtro 1 ">
             <field name="name">Filtro informacion 1</field>
@@ -55,8 +108,7 @@
             <field name="action_id" eval="ref('proydefinitivo.proydefinitivo_list_action')"/><!-- Obtemos o id a partir do id externo-->
         </record>
 
-he one above -->
-<!--
+    <!--
     <record model="ir.actions.server" id="proydefinitivo.action_server">
       <field name="name">proydefinitivo server</field>
       <field name="model_id" ref="model_proydefinitivo_proydefinitivo"/>
