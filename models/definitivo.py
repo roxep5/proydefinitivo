@@ -7,7 +7,8 @@ class proydefinitivo(models.Model):
     _name = 'proydefinitivo.definitivo'
     _description = 'Proyecto definitivo'
 
-    name = fields.Char()
+    autorizado = fields.Boolean(string="¿Autorizado?", default=True)
+#     name = fields.Char()
 #     value = fields.Integer()
 #     value2 = fields.Float(compute="_value_pc", store=True)
 #     description = fields.Text()
