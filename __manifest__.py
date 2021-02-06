@@ -3,14 +3,14 @@
     'name': "proydefinitivo",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
-
-    'description': """
-        Long description of module's purpose
+        Proyecto definitivo
     """,
 
-    'author': "My Company",
+    'description': """
+    Este proyecto es el definitivo despues de muchos problemas
+    """,
+
+    'author': "Jose Maria Pinha Garcia",
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -25,7 +25,7 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'views/views.xml',
+        'views/definitivo.xml',
         'views/templates.xml',
     ],
     # only loaded in demonstration mode
