@@ -6,7 +6,7 @@
     <record model="ir.actions.act_window" id="proydefinitivo_list_action">
       <field name="name">La accion principal</field>
       <field name="res_model">proydefinitivo.definitivo</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree,form,graph</field>
       <field name="help" type="html">
         <p class="o_view_nocontent_smiling_face">Tienes que crear el primer registro</p>
       </field>
@@ -107,7 +107,15 @@
             <field name="user_id"></field><!-- En blanco para que esté dispoñible para todos os usuarios -->
             <field name="action_id" eval="ref('proydefinitivo.proydefinitivo_list_action')"/><!-- Obtemos o id a partir do id externo-->
         </record>
-
+<record model="ir.ui.view" id="definitivo_graph_view">
+            <field name="name">definitivo.grafico</field>
+            <field name="model">proydefinitivo.definitivo</field>
+            <field name="arch" type="xml">
+                <graph string="densidades" type="bar">
+                    <field name="densidade" type="row"/>
+                </graph>
+            </field>
+</record>
     <!--
     <record model="ir.actions.server" id="proydefinitivo.action_server">
       <field name="name">proydefinitivo server</field>

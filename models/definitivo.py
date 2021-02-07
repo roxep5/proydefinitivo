@@ -20,6 +20,17 @@ class proydefinitivo(models.Model):
     foto = fields.Binary(string='Foto')
     adxunto_nome = fields.Char(string="Nome Adxunto")
     adxunto = fields.Binary(string="Arquivo adxunto")
+    # Os campos Many2one crean un campo na BD
+    moeda_id = fields.Many2one('res.currency', domain="[('position','=','after')]")
+    # con domain, filtramos os valores mostrados. Pode ser mediante unha constante (vai entre comillas) ou unha variable
+    gasto = fields.Monetary("Gasto", 'moeda_id')
+    moeda_en_texto = fields.Char(related="moeda_id.currency_unit_label", string="Moeda en formato texto", store=True)
+    creador_da_moeda = fields.Char(related="moeda_id.create_uid.login", string="Usuario creador da moeda", store=True)
+
+    moeda_euro_id = fields.Many2one('res.currency',
+                                    default=lambda self: self.env['res.currency'].search([('name', '=', "EUR")],
+                                                                                         limit=1))
+    gasto_en_euros = fields.Monetary("Gasto en Euros", 'moeda_euro_id')
 
     @api.depends('alto_en_cms', 'longo_en_cms', 'ancho_en_cms')
     def _volume(self):
@@ -33,5 +44,5 @@ class proydefinitivo(models.Model):
                 rexistro.densidade = (float(rexistro.peso) / float(rexistro.volume)) * 100
             else:
                 rexistro.densidade = 0
-
-
+    def _cambia_campo_sexo(self, rexistro):
+        rexistro.sexo_traducido = "Hombre"
