@@ -18,6 +18,11 @@
       <field name="model">proydefinitivo.definitivo</field>
       <field name="arch" type="xml">
         <form name="Formulario Proyecto Definitivo">
+        <header>
+            <button name="ver_contexto" type="object" string="Ver Contexto"/>
+            <button name="envio_email" type="object" string="Enviar Email"/>
+        </header>
+
         <sheet>
           <group>
           <field name="name"/>
@@ -116,18 +121,6 @@
                     </graph>
                 </field>
         </record>
-       <record model="ir.ui.view" id="definitivo_form_view">
-            <field name="name">definitivo.form</field>
-            <field name="model">proydefinitivo.definitivo</field>
-            <field name="arch" type="xml">
-                <form string="Formulario información">
-                    <header>
-                        <button name="ver_contexto" type="object" string="Ver Contexto"/>
-                        <button name="envio_email" type="object" string="Enviar Email"/>
-                    </header>
-                </form>
-            </field>
-       </record>
     <!--
     <record model="ir.actions.server" id="proydefinitivo.action_server">
       <field name="name">proydefinitivo server</field>
