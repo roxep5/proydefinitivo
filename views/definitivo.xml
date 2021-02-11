@@ -107,15 +107,27 @@
             <field name="user_id"></field><!-- En blanco para que esté dispoñible para todos os usuarios -->
             <field name="action_id" eval="ref('proydefinitivo.proydefinitivo_list_action')"/><!-- Obtemos o id a partir do id externo-->
         </record>
-<record model="ir.ui.view" id="definitivo_graph_view">
-            <field name="name">definitivo.grafico</field>
+        <record model="ir.ui.view" id="definitivo_graph_view">
+                <field name="name">definitivo.grafico</field>
+                <field name="model">proydefinitivo.definitivo</field>
+                <field name="arch" type="xml">
+                    <graph string="densidades" type="bar">
+                        <field name="densidade" type="row"/>
+                    </graph>
+                </field>
+        </record>
+       <record model="ir.ui.view" id="definitivo_form_view">
+            <field name="name">definitivo.form</field>
             <field name="model">proydefinitivo.definitivo</field>
             <field name="arch" type="xml">
-                <graph string="densidades" type="bar">
-                    <field name="densidade" type="row"/>
-                </graph>
+                <form string="Formulario información">
+                    <header>
+                        <button name="ver_contexto" type="object" string="Ver Contexto"/>
+                        <button name="envio_email" type="object" string="Enviar Email"/>
+                    </header>
+                </form>
             </field>
-</record>
+       </record>
     <!--
     <record model="ir.actions.server" id="proydefinitivo.action_server">
       <field name="name">proydefinitivo server</field>

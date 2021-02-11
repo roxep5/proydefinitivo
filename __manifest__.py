@@ -27,7 +27,9 @@
         'security/ir.model.access.csv',
         'views/menu.xml',
         'views/definitivo.xml',
-        'views/templates.xml',
+        'views/pedido.xml',
+        'views/suceso.xml',
+        'views/lineapedido.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
