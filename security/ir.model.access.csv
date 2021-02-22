@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_proydefinitivo_proydefinitivo,proydefinitivo.proydefinitivo,model_proydefinitivo_definitivo,base.group_user,1,1,1,1
+access_proydefinitivo_suceso,proydefinitivo.suceso,model_proydefinitivo_suceso,base.group_user,1,1,1,1
+access_proydefinitivo_pedido,proydefinitivo.pedido,model_proydefinitivo_pedido,base.group_user,1,1,1,1
+access_proydefinitivo_lineapedido,proydefinitivo.lineapedido,model_proydefinitivo_lineapedido,base.group_user,1,1,1,1
