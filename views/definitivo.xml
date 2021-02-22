@@ -42,7 +42,7 @@
       </field>
     </record>
 
-<record model="ir.ui.view" id="definitivo_form_view">
+<!--<record model="ir.ui.view" id="definitivo_form_view">
       <field name="name">definitivo.form</field>
       <field name="model">proydefinitivo.definitivo</field>
       <field name="arch" type="xml">
@@ -77,7 +77,7 @@
           </sheet>
         </form>
       </field>
-    </record>
+    </record>-->
         <record model="ir.ui.view" id="definitivo_search_view">
       <field name="name">definitivo.search</field>
       <field name="model">proydefinitivo.definitivo</field>

@@ -51,7 +51,7 @@ class proydefinitivo(models.Model):
         meu_usuario = self.env.user
         # mail_de     Odoo pon o email que configuramos en gmail para facer o envio
         mail_reply_to = meu_usuario.partner_id.email  # o enderezo email que ten asociado o noso usuario
-        mail_para = 'emaildedestino@servidordedestino.com'  # o enderezo email de destino
+        mail_para = 'pinhayop@gmail.com'  # o enderezo email de destino
         mail_valores = {
             'subject': 'Aquí iría o asunto do email ',
             'author_id': meu_usuario.id,
