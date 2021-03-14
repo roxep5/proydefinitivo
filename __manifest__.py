@@ -25,11 +25,12 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/menu.xml',
+        'accion_planificada/accion_planificada.xml',
         'views/definitivo.xml',
         'views/pedido.xml',
         'views/suceso.xml',
         'views/lineapedido.xml',
+        'views/menu.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

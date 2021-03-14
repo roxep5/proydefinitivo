@@ -1,7 +1,7 @@
 <odoo>
     <data>
         <menuitem id="main_proydefinitivo" name="Menú Nivel 0. Proyecto definitivo"/>
-        <menuitem id="menu_definitivo" name="Manú Nivel 1. Proyecto definitivo" parent="main_proydefinitivo" action="proydefinitivo_list_action"/>
+        <menuitem id="menu_definitivo" name="Menú Nivel 1. Proyecto definitivo" parent="main_proydefinitivo" action="proydefinitivo_list_action"/>
         <menuitem id="menu_suceso" name="Menú Nivel 1. Suceso" parent="main_proydefinitivo" action="suceso_list_action"/>
         <menuitem id="pedido_menu" name="Menú Nivel 1. Pedido" parent="main_proydefinitivo" action="pedido_list_action"/>
     </data>
