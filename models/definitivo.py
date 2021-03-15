@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+import pytz
 from odoo import models, fields, api
 
 
@@ -46,6 +46,13 @@ class proydefinitivo(models.Model):
                 rexistro.densidade = 0
     def _cambia_campo_sexo(self, rexistro):
         rexistro.sexo_traducido = "Hombre"
+
+    def convirte_data_hora_de_utc_a_timezone_do_usuario(self,
+                                                        data_hora_utc_object):  # recibe a data hora en formato object
+        usuario_timezone = pytz.timezone(
+            self.env.user.tz or 'UTC')  # obter a zona horaria do usuario. Ollo!!! nas preferencias do usuario ten que estar ben configurada a zona horaria
+        return pytz.UTC.localize(data_hora_utc_object).astimezone(usuario_timezone)  # hora co horario do usuario en formato object
+        # para usar  pytz temos que facer  import pytz
 
     def envio_email(self):
         meu_usuario = self.env.user
